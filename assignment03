@@ -1,0 +1,63 @@
+class EmployeePayroll {
+
+    // a. Salary by employee ID
+    double calculateSalary(int employeeID) {
+        return 20000;
+    }
+
+    // b. Salary by hours worked and rate
+    double calculateSalary(int hoursWorked, int ratePerHour) {
+        return hoursWorked * ratePerHour;
+    }
+
+    // c. Salary by employee ID with bonus
+    double calculateSalary(int employeeID, int bonus, double dummy) {
+        return 20000 + bonus;
+    }
+
+    // d. Monthly salary from annual salary
+    double calculateSalary(double annualSalary) {
+        return annualSalary / 12;
+    }
+
+    // e. Salary with overtime
+    double calculateSalary(int hoursWorked, int ratePerHour, int overtimeHours) {
+        double overtimePay = overtimeHours * ratePerHour * 1.5;
+        return (hoursWorked * ratePerHour) + overtimePay;
+    }
+
+    // f. Salary with deductions
+    double calculateSalary(double baseSalary, int deductions) {
+        return baseSalary - deductions;
+    }
+
+    // g. Salary with bonus and deductions
+    double calculateSalary(double baseSalary, double bonus, int deductions) {
+        return baseSalary + bonus - deductions;
+    }
+
+    public static void main(String[] args) {
+    EmployeePayroll emp = new EmployeePayroll();
+
+    System.out.println("Salary based on Employee ID: "
+            + emp.calculateSalary(101));
+
+    System.out.println("Salary based on Hours Worked & Rate: "
+            + emp.calculateSalary(160, 150));
+
+    System.out.println("Salary based on Employee ID with Bonus: "
+            + emp.calculateSalary(101, 5000, 0.0));
+
+    System.out.println("Monthly Salary from Annual Salary: "
+            + emp.calculateSalary(360000.0));
+
+    System.out.println("Salary with Overtime: "
+            + emp.calculateSalary(160, 150, 20));
+
+    System.out.println("Salary after Deductions: "
+            + emp.calculateSalary(25000.0, 3000));
+
+    System.out.println("Salary with Bonus and Deductions: "
+            + emp.calculateSalary(25000.0, 5000.0, 2000));
+}
+}
